@@ -1,0 +1,77 @@
+.todo {
+  gap: 20px;
+  padding: 20px 15px;
+  border-bottom: 1px solid var(--light-gray);
+}
+
+.todo__label {
+  display: flex;
+  gap: 12px;
+}
+
+.todo__radio {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+}
+
+.todo__pseudo-item {
+  min-width: 35px;
+  width: 35px;
+  height: 35px;
+  border: 1px solid var(--dark-gray);
+  border-radius: 50%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.todo__checkmark {
+  min-width: 25px;
+  width: 25px;
+  height: 25px;
+  opacity: 0;
+  background: url(../../images/checkmark.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  -webkit-transition: all 0.1s ease-in;
+  transition: all 0.1s ease-in;
+}
+
+.todo__radio:checked + .todo__pseudo-item > .todo__checkmark {
+  opacity: 1;
+}
+
+.todo__text {
+  color: var(--black);
+  font-size: 29px;
+  font-weight: 100;
+  letter-spacing: 1px;
+}
+
+.todo__text_type_checked {
+  text-decoration: line-through;
+  color: var(--light-gray);
+}
+
+@media (max-width: 768px) {
+  .todo__text {
+    font-size: 25px;
+  }
+}
+
+@media (max-width: 425px) {
+  .todo {
+    gap: 10px;
+    padding: 10px;
+  }
+
+  .todo__text {
+    font-size: 18px;
+  }
+}

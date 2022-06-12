@@ -5,6 +5,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  list-style: none;
 }
 
 body {
@@ -19,4 +20,5 @@ html {
   --pink: #e7d4d5;
   --light-gray: #e7e7e7;
   --dark-gray: #adafaf;
+  --black: #606361;
 }
