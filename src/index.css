@@ -1,1 +1,22 @@
 @import url(./vendor/normalize.css);
+@import url(./vendor/fonts/fonts.css);
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-width: 320px;
+  background: #f5f6f4;
+  font-family: Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html {
+  --pink: #e7d4d5;
+  --light-gray: #e7e7e7;
+  --dark-gray: #adafaf;
+}

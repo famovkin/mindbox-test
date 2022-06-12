@@ -1,15 +1,18 @@
 import React from 'react';
+
+import Input from '../Input/Input';
+
 import './App.css';
 
 function App() {
   return (
     <div className="app">
+      <h1 className="app__title">todos</h1>
       <div className="app__container">
-        <h1 className="app__title">Todos</h1>
-        {/* input */}
-        {/* todos list */}
-        {/* footer */}
-        {/* inside footer filter */}
+        <Input
+          type="text"
+          placeholder="What needs to be done?"
+        />
       </div>
     </div>
   );
