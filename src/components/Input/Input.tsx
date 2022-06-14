@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { memo } from 'react';
 
 import arrow from '../../images/down-arrow.svg';
 
@@ -23,4 +23,4 @@ function Input({ type, placeholder } : InputProps): JSX.Element {
   );
 }
 
-export default Input;
+export default memo(Input);
