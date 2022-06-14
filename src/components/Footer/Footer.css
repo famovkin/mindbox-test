@@ -13,6 +13,17 @@
   gap: 2px;
 }
 
+.filter {
+  padding: 5px 10px;
+  cursor: pointer;
+  text-transform: capitalize;
+}
+
+.filter_type_active {
+  border-radius: 5px;
+  border: 1px solid var(--pink);
+}
+
 @media (max-width: 768px) {
   .footer {
     font-size: 17px;
@@ -32,14 +43,4 @@
   .footer__remains {
     text-align: center;
   }
-}
-.filter {
-  padding: 5px 10px;
-  cursor: pointer;
-  text-transform: capitalize;
-}
-
-.filter_type_active {
-  border-radius: 5px;
-  border: 1px solid var(--pink);
 }
