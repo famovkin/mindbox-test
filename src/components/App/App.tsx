@@ -20,6 +20,7 @@ function App() {
 
   const removeTodos = (): void => {
     const activeTodoItems = todos.filter((todo) => todo.complete === false);
+    if (activeTodoItems.length === todos.length) return;
     setTodos(activeTodoItems);
   };
 
