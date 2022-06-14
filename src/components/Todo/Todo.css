@@ -9,7 +9,7 @@
   gap: 12px;
 }
 
-.todo__radio {
+.todo__checkbox {
   position: absolute;
   width: 1px;
   height: 1px;
@@ -43,7 +43,7 @@
   transition: all 0.1s ease-in;
 }
 
-.todo__radio:checked + .todo__pseudo-item > .todo__checkmark {
+.todo__checkbox:checked + .todo__pseudo-item > .todo__checkmark {
   opacity: 1;
 }
 
@@ -52,6 +52,8 @@
   font-size: 29px;
   font-weight: 100;
   letter-spacing: 1px;
+  -webkit-transition: all 0.2s ease-in;
+  transition: all 0.2s ease-in;
 }
 
 .todo__text_type_checked {
