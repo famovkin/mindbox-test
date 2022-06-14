@@ -1,38 +1,37 @@
 import React, { useState, useEffect, useCallback } from 'react';
 
-import Input from '../Input/Input';
+import Form from '../Form/Form';
 import Todo from '../Todo/Todo';
 import Footer from '../Footer/Footer';
 
+import { initialTodos } from '../../utils/constants';
 import { TodoState } from '../../types/todo';
 
 import './App.css';
-
-const initialTodos = [
-  { id: 1, text: 'Сделать что-нибудь важное', complete: false },
-  { id: 2, text: 'Купить хлеб', complete: false },
-  { id: 3, text: 'Погулять с собакой', complete: false },
-  { id: 4, text: 'Погулять с кошкой', complete: false },
-  { id: 5, text: 'Погулять одному', complete: false },
-];
 
 function App() {
   const [filter, setFilter] = useState<string>('all');
   const [todos, setTodos] = useState<TodoState[]>(initialTodos);
   const [activeTodosCount, setActiveTodosCount] = useState<number>(todos.length);
 
-  const filterTodo = (selectedFilter: string): void => {
+  const filterTodos = (selectedFilter: string): void => {
     setFilter(selectedFilter);
   };
 
-  useEffect(() => setFilter(filter), [filter]);
+  const removeTodos = (): void => {
+    const activeTodoItems = todos.filter((todo) => todo.complete === false);
+    setTodos(activeTodoItems);
+  };
 
-  const computeActiveTodo = useCallback(
+  const submitFormHandler = (newTodo: TodoState): void => setTodos([...todos, newTodo]);
+
+  const computeActiveTodos = useCallback(
     (): number => todos.filter((todo) => todo.complete === false).length,
     [todos],
   );
 
-  useEffect(() => setActiveTodosCount(computeActiveTodo()), [todos]);
+  useEffect(() => setFilter(filter), [filter]);
+  useEffect(() => setActiveTodosCount(computeActiveTodos()), [todos]);
 
   const allTodos = filter === 'all'
     && todos.map((todo) => (
@@ -74,18 +73,14 @@ function App() {
         />
       ));
 
-  const removeTodo = () => {
-    const activeTodoItems = todos.filter((todo) => todo.complete === false);
-    setTodos(activeTodoItems);
-  };
-
   return (
     <div className="app">
       <h1 className="app__title">todos</h1>
       <div className="app__container">
-        <Input
+        <Form
           type="text"
           placeholder="What needs to be done?"
+          onSubmit={submitFormHandler}
         />
         <ul className="todos">
           {allTodos && allTodos.length !== 0
@@ -100,8 +95,8 @@ function App() {
         </ul>
         <Footer
           activeTodosCount={activeTodosCount}
-          filterHandler={filterTodo}
-          removeHandler={removeTodo}
+          filterHandler={filterTodos}
+          removeHandler={removeTodos}
         />
       </div>
     </div>

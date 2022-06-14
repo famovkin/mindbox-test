@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 
 import Button from '../Button/Button';
 
-import filters from '../../utils/constants';
+import { filters } from '../../utils/constants';
 import { FooterProps } from '../../types/footer';
 
 import './Footer.css';

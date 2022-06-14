@@ -1,5 +1,4 @@
-.input {
-  width: 100%;
+.form {
   display: flex;
   align-items: center;
   gap: 20px;
@@ -8,11 +7,12 @@
   padding: 20px;
 }
 
-.input__image {
+.form__image {
   width: 22px;
 }
 
-.input__field {
+.form__input {
+  width: 100%;
   border: none;
   outline: none;
   font-size: 32px;
@@ -23,18 +23,18 @@
 }
 
 @media (max-width: 768px) {
-  .input__field {
+  .form__input {
     font-size: 25px;
   }
 }
 
 @media (max-width: 425px) {
-  .input {
+  .form {
     gap: 10px;
     padding: 10px 15px;
   }
 
-  .input__field {
+  .form__input {
     font-size: 18px;
   }
 }
