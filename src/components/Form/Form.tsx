@@ -27,7 +27,7 @@ function Input({ type, placeholder, onSubmit } : FormProps): JSX.Element {
   };
 
   return (
-    <form className="form" onSubmit={submitHandler}>
+    <form className="form" onSubmit={submitHandler} data-testid="form">
       <img
         className="form__image"
         src={arrow}
