@@ -1,0 +1,7 @@
+.todos__message {
+  color: var(--dark-gray);
+  text-align: center;
+  padding: 40px 10px;
+  font-size: 32px;
+  font-weight: 100;
+}
