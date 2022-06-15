@@ -1,3 +1,7 @@
+.app {
+  padding-bottom: 50px;
+}
+
 .app__title {
   color: var(--pink);
   font-family: "HelveticaNowDisplay";
@@ -22,12 +26,4 @@
   max-width: 700px;
   width: calc(100% - 60px);
   box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.15);
-}
-
-.todos__message {
-  color: var(--dark-gray);
-  text-align: center;
-  padding: 40px 10px;
-  font-size: 32px;
-  font-weight: 100;
 }
