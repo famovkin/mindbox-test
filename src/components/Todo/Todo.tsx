@@ -27,13 +27,12 @@ function Todo({
           className="todo__checkbox"
           type="checkbox"
           id={`${text + id}`}
-          checked={complete}
           onChange={() => checkboxHandler(id)}
         />
         <div className="todo__pseudo-item">
           <span className="todo__checkmark" />
         </div>
-        <p className={`todo__text ${complete ? 'todo__text_type_checked' : ''}`}>{text}</p>
+        <p className={`todo__text ${complete ? 'todo__text_type_checked' : ''}`} data-testid="todo__text">{text}</p>
       </label>
     </li>
   );
